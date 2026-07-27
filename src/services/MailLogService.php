@@ -31,7 +31,7 @@ final class MailLogService
     /**
      * Страница списка писем.
      *
-     * @return array{messages: MailMessage[], pagination: Pagination, total: int, path: string}
+     * @return array{messages: MailMessage[], pagination: Pagination, total: int}
      */
     public function getPage(int $pageSize): array
     {
@@ -52,7 +52,6 @@ final class MailLogService
             'messages' => $messages,
             'pagination' => $pagination,
             'total' => count($paths),
-            'path' => $this->repo->getPath(),
         ];
     }
 

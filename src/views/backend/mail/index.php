@@ -16,7 +16,6 @@ use yii\web\View;
  * @var MailMessage[] $messages
  * @var Pagination $pagination
  * @var int $total
- * @var string $path
  */
 
 $this->title = 'Mail Log';
@@ -27,13 +26,9 @@ $formatter = Yii::$app->formatter;
 <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
         <span><?= Html::encode($this->title) ?></span>
-        <span class="badge bg-secondary" title="<?= Html::encode($path) ?>">Всего: <?= $total ?></span>
+        <span class="badge bg-secondary">Всего: <?= $total ?></span>
     </div>
     <div class="card-body">
-        <p class="text-muted small mb-3">
-            Каталог: <code><?= Html::encode($path) ?></code>
-        </p>
-
         <?php if ($messages === []): ?>
             <div class="alert alert-info mb-0">Писем нет.</div>
         <?php else: ?>
