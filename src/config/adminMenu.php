@@ -4,6 +4,9 @@
  * Copyright (c) 2026 Besnovatyj. Licensed under the MIT License.
  */
 
+use Besnovatyj\Contracts\adminMenu\AdminMenuLocation;
+use Besnovatyj\Contracts\adminMenu\AdminMenuPlacement;
+
 return [
     [
         'label' => 'Mail Log',
@@ -14,13 +17,13 @@ return [
         },
         '_meta' => [
             'placements' => [
-                [
-                    'location' => 'right-sidebar',
-                    'group' => 'Logs',
-                    'groupIcon' => 'bi bi-clock-history',
-                    'priority' => 110,
-                    'groupPriority' => 100,
-                ],
+                new AdminMenuPlacement(
+                    location: AdminMenuLocation::RightSidebar,
+                    group: 'Logs',
+                    groupIcon: 'bi bi-clock-history',
+                    groupPriority: 100,
+                    priority: 110,
+                ),
             ],
         ],
     ],
